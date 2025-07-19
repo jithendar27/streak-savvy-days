@@ -36,6 +36,7 @@ export const useLocalStorage = () => {
 
   const getDefaultTasks = (): TaskData[] => [
     { id: 'dsa', title: 'Daily DSA', isCompleted: false, comment: '' },
+    { id: 'dsa-revision', title: 'DSA Revision', isCompleted: false, comment: '' },
     { id: 'webdev', title: 'Learn Web Development', isCompleted: false, comment: '' },
     { id: 'aptitude', title: 'Daily Aptitude', isCompleted: false, comment: '' },
     { id: 'communication', title: 'Learning Communication', isCompleted: false, comment: '' },
