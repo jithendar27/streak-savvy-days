@@ -3,9 +3,10 @@ import { Button } from "@/components/ui/button";
 
 interface CoverPageProps {
   onEnter: () => void;
+  onProgressGoals: () => void;
 }
 
-export const CoverPage = ({ onEnter }: CoverPageProps) => {
+export const CoverPage = ({ onEnter, onProgressGoals }: CoverPageProps) => {
   return (
     <div className="min-h-screen bg-gradient-primary flex items-center justify-center p-6">
       <div className="text-center text-white max-w-2xl mx-auto">
@@ -29,7 +30,10 @@ export const CoverPage = ({ onEnter }: CoverPageProps) => {
             <Calendar className="w-8 h-8 mb-2" />
             <span className="text-sm font-medium">Date Tracking</span>
           </div>
-          <div className="flex flex-col items-center p-4 bg-white/10 rounded-xl backdrop-blur-sm">
+          <div 
+            className="flex flex-col items-center p-4 bg-white/10 rounded-xl backdrop-blur-sm cursor-pointer hover:bg-white/20 transition-all duration-300"
+            onClick={onProgressGoals}
+          >
             <Target className="w-8 h-8 mb-2" />
             <span className="text-sm font-medium">Progress Goals</span>
           </div>

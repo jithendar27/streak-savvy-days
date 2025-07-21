@@ -40,20 +40,7 @@ export const useLocalStorage = () => {
     { id: 'webdev', title: 'Learn Web Development', isCompleted: false, comment: '' },
     { id: 'aptitude', title: 'Daily Aptitude', isCompleted: false, comment: '' },
     { id: 'communication', title: 'Learning Communication', isCompleted: false, comment: '' },
-    {
-      id: 'sem-prep',
-      title: 'Sem Preparation',
-      isCompleted: false,
-      comment: '',
-      subtasks: [
-        { id: 'ada', title: 'ADA', isCompleted: false, comment: '' },
-        { id: 'ds', title: 'DS', isCompleted: false, comment: '' },
-        { id: 'cn', title: 'CN', isCompleted: false, comment: '' },
-        { id: 'webdev-sub', title: 'WEB DEV', isCompleted: false, comment: '' },
-        { id: 'pe', title: 'PE', isCompleted: false, comment: '' },
-        { id: 'oe', title: 'OE', isCompleted: false, comment: '' },
-      ]
-    }
+    { id: 'sem-prep', title: 'Sem Preparation', isCompleted: false, comment: '' }
   ];
 
   const getDataForDate = (date: Date): DayData => {
