@@ -102,8 +102,7 @@ export const SubjectsTracker = ({ onBack }: SubjectsTrackerProps) => {
                 unit.id === unitId
                   ? { 
                       ...unit, 
-                      isCompleted: !unit.isCompleted,
-                      coverage: !unit.isCompleted ? 220 : 0
+                      isCompleted: !unit.isCompleted
                     }
                   : unit
               )
@@ -116,10 +115,6 @@ export const SubjectsTracker = ({ onBack }: SubjectsTrackerProps) => {
   const getSubjectProgress = (subject: Subject) => {
     const completedUnits = subject.units.filter(unit => unit.isCompleted).length;
     return Math.round((completedUnits / subject.units.length) * 100);
-  };
-
-  const getTotalCoverage = (subject: Subject) => {
-    return subject.units.reduce((total, unit) => total + unit.coverage, 0);
   };
 
   return (
@@ -156,9 +151,6 @@ export const SubjectsTracker = ({ onBack }: SubjectsTrackerProps) => {
                   value={getSubjectProgress(subject)} 
                   className="h-2"
                 />
-                <p className="text-sm text-muted-foreground">
-                  Total Coverage: {getTotalCoverage(subject)}
-                </p>
               </CardHeader>
               <CardContent>
                 <div className="space-y-2">
@@ -175,13 +167,10 @@ export const SubjectsTracker = ({ onBack }: SubjectsTrackerProps) => {
                           onChange={() => handleUnitToggle(subject.id, unit.id)}
                           className="mr-3 h-4 w-4 rounded border-border text-primary focus:ring-primary"
                         />
-                        <span className={`font-medium ${unit.isCompleted ? 'line-through text-muted-foreground' : 'text-foreground'}`}>
-                          {unit.name}
-                        </span>
-                      </div>
-                      <Badge variant={unit.isCompleted ? "default" : "outline"} className="text-xs">
-                        {unit.coverage}
-                      </Badge>
+                      <span className={`font-medium ${unit.isCompleted ? 'line-through text-muted-foreground' : 'text-foreground'}`}>
+                        {unit.name}
+                      </span>
+                    </div>
                     </div>
                   ))}
                 </div>

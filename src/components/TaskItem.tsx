@@ -102,7 +102,7 @@ export const TaskItem = ({
             <Textarea
               placeholder="Share your insights and learnings..."
               value={comment}
-              onChange={(e) => handleCommentSave(e.target.value)}
+              onChange={(e) => onCommentChange(id, e.target.value)}
               className="min-h-[80px] bg-white border-border focus:border-primary"
             />
           </div>
